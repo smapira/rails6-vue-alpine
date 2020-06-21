@@ -1,0 +1,2 @@
+class HelloVueController < ApplicationController
+end
