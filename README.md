@@ -1,24 +1,25 @@
-# README
+# rails6-vue-alpine
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Spec
 
-Things you may want to cover:
+Ruby 2.7.1
+Ruby on Rails 6.0.3.2
+Webpacker 5.1.1
 
-* Ruby version
+## History Command lines
 
-* System dependencies
+```bash
+rails new rails6-vue-alpine -B --webpacker=vue --skip-test
+bundle update webpacker # to ~> 5.x
+rails webpacker:install
+rails webpacker:install:vue
+rails webpacker:install:typescript
+rails generate controller hello_vue index
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Usage
+```bash
+CONTAINER=vue-$(date +%Y-%m-%d) && \
+docker build --rm -t $CONTAINER . &&
+docker run -it -p 3000:3000 --rm $CONTAINER
+```
