@@ -1,5 +1,10 @@
 FROM ruby:2.7.1-alpine
 
+ENV RAILS_SERVE_STATIC_FILES=true
+ENV RAILS_ENV=production
+ENV NODE_ENV=production
+ENV RAILS_LOG_TO_STDOUT=true
+
 WORKDIR /opt/app
 COPY Gemfile* ./
 RUN echo "install: --no-document" > $HOME/.gemrc && \
@@ -25,6 +30,13 @@ RUN bundle install --jobs 4 --without development test && \
 
 ADD . /opt/app/.
 
+# Run as non-privileged user
+RUN addgroup app && \
+	adduser -S app && \
+	chown -R app:app /opt/app
+
+USER app
+
 EXPOSE 3000
 
-ENTRYPOINT ["bin/rails", "server", "-b", "0.0.0.0", "-e", "production"]
+ENTRYPOINT ["bin/rails", "server", "-b", "0.0.0.0"]

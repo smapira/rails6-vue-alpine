@@ -2,9 +2,9 @@
 
 ## Spec
 
-Ruby 2.7.1
-Ruby on Rails 6.0.3.2
-Webpacker 5.1.1
+- Ruby 2.7.1
+- Ruby on Rails 6.0.3.2
+- Webpacker 5.1.1
 
 ## History Command lines
 
