@@ -10,6 +10,8 @@
 
 ```bash
 rails new rails6-vue-alpine -B --webpacker=vue --skip-test
+bundle config set path 'vendor/bundle'
+bundle install -j 4
 bundle update webpacker # to ~> 5.x
 rails webpacker:install
 rails webpacker:install:vue
