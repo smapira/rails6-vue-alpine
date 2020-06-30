@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+@import 'sass/utilities/initial-variables';
+@import 'sass/utilities/functions';
+$link: $grey;
+$link-visited: $grey;
+$link-hover: $grey;
+$link-active: $grey;
+$primary: #f78b4c;
+@import 'bulma';
