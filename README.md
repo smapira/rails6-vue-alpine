@@ -20,8 +20,7 @@ rails generate controller hello_vue index
 ```
 
 ## Usage
-```bash
-bundle exec rails credentials:edit
-docker-compose up
-open http://0.0.0.0:3000
-```
+1. bundle exec rails credentials:edit
+2. set firebase api information in Dockerfile 
+3. docker-compose up
+4. open http://0.0.0.0:3000

@@ -6,7 +6,11 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
 import Vue from 'vue'
+// @ts-ignore
 import App from '../app.vue'
+import "../plugins/firebase";
+
+Vue.config.productionTip = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
