@@ -6,6 +6,7 @@ ENV RAILS_ENV=production
 ENV NODE_ENV=production
 ENV RACK_ENV=production
 ENV BUNDLE_VERSION 2.1.4
+ENV NODE_VERSION 14.3.0-r0
 
 WORKDIR /opt/app
 COPY Gemfile* ./
@@ -25,7 +26,7 @@ RUN apk add --update --no-cache --virtual=.build-dependencies \
 		mariadb-dev \
 		openssh \
 		patch \
-		nodejs \
+		"nodejs-current=${NODE_VERSION}" \
 		yarn \
 		tzdata
 
@@ -33,7 +34,7 @@ RUN gem install bundler -v ${BUNDLE_VERSION} && \
 	bundle config set without 'development test'
 
 RUN bundle install --jobs 4 && \
-    apk del .build-dependencies
+    apk del --purge .build-dependencies
 
 ADD . /opt/app/.
 
