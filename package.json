@@ -8,10 +8,12 @@
     "@babel/preset-typescript": "^7.10.1",
     "@rails/webpacker": "5.1.1",
     "babel-preset-typescript-vue": "^1.1.1",
+    "firebase": "^7.15.5",
     "turbolinks": "^5.2.0",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuefire": "^2.2.2"
   },
   "version": "0.1.0",
   "devDependencies": {

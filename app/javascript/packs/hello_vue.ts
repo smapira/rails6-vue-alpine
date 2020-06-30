@@ -8,6 +8,9 @@
 import Vue from 'vue'
 // @ts-ignore
 import App from '../app.vue'
+import "../plugins/firebase";
+
+Vue.config.productionTip = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
